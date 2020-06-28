@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+<form action="" method="POST" class="form">
+    {% csrf_token %}            {% comment %}   for secuirty    {% endcomment %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+{% endblock content %}

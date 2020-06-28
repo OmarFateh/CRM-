@@ -34,7 +34,12 @@
       #orders-pending{
         background-color: #7CD1C0;
       } */
-    
+
+      #hello-msg, #logout{
+        font-size: 18px;
+        margin-right:20px;
+        color: #fff;
+      }
     </style>  
     
     <!-- CSS here -->
@@ -58,8 +63,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'accounts:products' %}">Products</a>
           </li>
+          
         </ul>
       </div>
+      <span id='hello-msg'>Hello, {{request.user}}</span>
+      <span><a id='logout' href="{% url 'accounts:logout' %}">Logout</a></span>
     </nav>
     <!-- End Navbar   -->
   <div class="container-fluid">  

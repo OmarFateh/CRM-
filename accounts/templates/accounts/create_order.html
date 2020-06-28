@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+<form action="" method="POST" class="form">
+    {% csrf_token %}            {% comment %}   for secuirty    {% endcomment %}
+    {% comment %} {% bootstrap_form form  layout='horizontal' %} {% endcomment %}
+    {{ formset.management_form }}  {% comment %} to render the management form (it's an attribute of the formset itself) =>This form is used by the formset to manage the collection of forms contained in the formset {% endcomment %}
+    {% for form in formset %}
+        {{form}}
+        <hr>
+    {% endfor %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+{% endblock content %}
