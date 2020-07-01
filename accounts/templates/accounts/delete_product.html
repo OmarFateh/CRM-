@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<form action='{% url "accounts:delete_product" product.id %}' method='POST'>
+    {% csrf_token %}            {% comment %}   for secuirty    {% endcomment %}
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>Are you sure you want to delete "{{product}}"?</p>
+                <a href='{% url "accounts:products" %}' class="btn btn-secondary btn-lg" role="button">Cancel</a>
+                <button type="submit" class="btn btn-danger btn-lg">Confirm</button> 
+            </blockquote>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}

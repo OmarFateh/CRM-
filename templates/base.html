@@ -57,13 +57,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          {% if request.user.is_staff %}   <!-- show it only when the user is a staff member (admin) -->
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'accounts:dashboard' %}">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'accounts:products' %}">Products</a>
           </li>
-          
+          {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'accounts:edit_profile' %}">Edit Profile</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
       <span id='hello-msg'>Hello, {{request.user}}</span>

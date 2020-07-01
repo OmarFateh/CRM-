@@ -6,10 +6,10 @@
 <form action="" method="POST" class="form">
     {% csrf_token %}            {% comment %}   for secuirty    {% endcomment %}
     {% bootstrap_form form %}
-    <a href='{% url "accounts:dashboard" %}' class="d-inline btn btn-secondary" role="button">Cancel</a>
+    <a href='{% url "accounts:products" %}' class="d-inline btn btn-secondary" role="button">Cancel</a>
     <button type="submit" class=" d-inline btn btn-primary">Submit</button>
     {% comment %} {% buttons %}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class=" d-inline btn btn-primary">Submit</button>
     {% endbuttons %} {% endcomment %}
 </form>
 {% endblock content %}

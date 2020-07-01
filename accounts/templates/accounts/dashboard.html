@@ -52,6 +52,7 @@
                     </tr>
                 {% endfor %}
 			</table>
+			{% comment %} Start Pagination  {% endcomment %}
 			{% if orders.has_other_pages %}
 			<nav aria-label="Page navigation example">
 				<ul class="pagination justify-content-center">
@@ -73,6 +74,8 @@
 				</ul>
 			</nav>
 			{% endif %}
+			{% comment %} End Pagination  {% endcomment %}
+
 			{% comment %} {% if orders.has_other_pages %}
 			<nav aria-label="Page navigation example">
 				<ul class="pagination justify-content-center">
